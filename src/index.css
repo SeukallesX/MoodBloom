@@ -1,0 +1,60 @@
+
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #694b75;
+  background: #fff9fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #fff9fc 0%,
+    #ffe4ef 35%,
+    #f3e8ff 70%,
+    #e9d5ff 100%
+  );
+}
+
+button {
+  font: inherit;
+}
+
+
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #694b75;
+  background: #fff9fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #fff9fc 0%,
+    #ffe4ef 35%,
+    #f3e8ff 70%,
+    #e9d5ff 100%
+  );
+}
+
+button {
+  font: inherit;
+}
