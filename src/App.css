@@ -2711,271 +2711,1122 @@ textarea {
 }
 
 /* ============================================
+
    MoodBloom v0.9.3 — Responsive & Accessibility Polish
+
    Preserves v0.9.2 hologram and dashboard styling
+
    ============================================ */
 
 /* Prevent long journal entries and headings from expanding layouts. */
+
 .moodbloom :is(h1, h2, h3, h4, p, small) {
+
   overflow-wrap: break-word;
+
 }
 
 .dashboard-nav,
+
 .glass-card,
+
 .mood-preview,
+
 .mood-message,
+
 .entry,
+
 .summary-card,
+
 .stat-card {
+
   min-width: 0;
+
 }
 
 /* More comfortable touch and keyboard targets. */
+
 .nav-links button,
+
 .export-actions button,
+
 .entry-actions button,
+
 .calendar-navigation button {
+
   min-height: 44px;
+
 }
 
 .mood-option:focus-visible,
+
 .calendar-day:focus-visible,
+
 .nav-links button:focus-visible,
+
 .explore-btn:focus-visible,
+
 .back-btn:focus-visible,
+
 .save-btn:focus-visible {
+
   outline: 3px solid var(--accent-dark);
+
   outline-offset: 3px;
+
 }
 
 /* Keep the hologram and message aligned without forcing text to wrap awkwardly. */
+
 .mood-preview-layout > * {
+
   min-width: 0;
+
 }
 
 .mood-message-content {
+
   width: 100%;
+
   max-width: 36rem;
+
 }
 
 .mood-message h4 {
+
   overflow-wrap: normal;
+
   text-wrap: balance;
+
   line-height: 1.4;
+
 }
 
 .mood-message p {
+
   text-wrap: pretty;
+
 }
 
 /* Make responsive navigation and summary cards more resilient. */
+
 @media (max-width: 1050px) {
+
   .dashboard-nav {
+
     flex-wrap: wrap;
+
     justify-content: center;
+
   }
 
   .nav-links {
+
     justify-content: center;
+
   }
+
 }
 
 @media (max-width: 750px) {
+
   .dashboard {
+
     width: calc(100% - 28px);
+
   }
 
   .mood-preview-layout {
+
     grid-template-columns: 1fr;
+
     gap: 6px;
+
   }
 
   .preview-hologram {
+
     height: 250px;
+
   }
 
   .mood-message {
+
     min-height: 0;
+
   }
 
   .section-heading {
+
     align-items: flex-start;
+
   }
+
 }
 
 @media (max-width: 650px) {
+
   .dashboard {
+
     width: calc(100% - 20px);
+
   }
 
   .nav-links {
+
     width: 100%;
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 8px;
+
   }
 
   .nav-links button {
+
     width: 100%;
+
     padding: 10px 8px;
+
     font-size: 13px;
+
   }
 
   .mood-options {
+
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 9px;
+
   }
 
   .mood-option {
+
     min-height: 90px;
+
     padding: 10px 5px;
+
   }
 
   .mood-option small {
+
     font-size: 12px;
+
   }
 
   .mood-message {
+
     padding: 22px 16px;
+
   }
 
   .mood-message h4 {
+
     font-size: 19px;
+
   }
 
   .calendar-grid {
+
     gap: 4px;
+
   }
 
   .calendar-day,
+
   .calendar-empty {
+
     min-height: 52px;
+
   }
 
   .calendar-navigation {
+
     flex-wrap: wrap;
+
   }
 
   .history-meta {
+
     align-items: flex-start;
+
   }
 
   .save-action,
+
   .save-btn {
+
     max-width: 100%;
+
   }
+
 }
 
 @media (max-width: 390px) {
+
   .welcome {
+
     padding-inline: 12px;
+
   }
 
   .dashboard {
+
     width: calc(100% - 16px);
+
   }
 
   .glass-card {
+
     padding: 14px;
+
   }
 
   .mood-preview {
+
     padding: 12px;
+
   }
 
   .mood-options {
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
   }
 
   .calendar-grid {
+
     gap: 2px;
+
   }
 
   .calendar-day,
+
   .calendar-empty {
+
     min-height: 43px;
+
     border-radius: 7px;
+
   }
 
   .calendar-emoji {
+
     font-size: 15px;
+
   }
 
   .weekday {
+
     font-size: 9px;
+
   }
 
   .distribution-row {
+
     grid-template-columns: 72px minmax(0, 1fr) 20px;
+
     gap: 5px;
+
   }
+
 }
 
 /* Keep reduced-motion behavior consistent with the Settings toggle. */
+
 .motion-off .mood-option:hover,
+
 .motion-off .mood-message:hover,
+
 .motion-off .animated-card:hover {
+
   transform: none !important;
+
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .mood-option:hover,
+
   .mood-message:hover,
+
   .animated-card:hover {
+
     transform: none !important;
+
   }
+
 }
 
-
 /* ==========================================
+
    MoodBloom v0.9.3 — Mobile Finishing Touches
+
    ========================================== */
 
 @media (max-width: 650px) {
 
   /* Make the final mood button centered */
+
   .mood-options .mood-option:last-child {
+
     grid-column: 1 / -1;
+
     width: calc(50% - 4px);
+
     justify-self: center;
+
   }
 
   /* Keep headings balanced */
+
   .section-intro h3 {
+
     font-size: clamp(22px, 6vw, 28px);
+
     line-height: 1.3;
+
     text-wrap: balance;
+
   }
 
   /* Give the hologram enough room */
+
   .preview-hologram {
+
     height: 270px;
+
   }
 
   /* Improve message card spacing */
+
   .mood-message {
+
     padding: 24px 18px;
+
   }
 
   .mood-message h4 {
+
     font-size: 20px;
+
     line-height: 1.4;
+
     text-wrap: balance;
+
   }
 
   /* Make the save button easier to tap */
+
   .save-action {
+
     display: flex;
+
     width: 100%;
+
   }
 
   .save-action .save-btn {
+
     width: 100%;
+
     min-height: 50px;
+
   }
 
   /* Slightly compact summary cards */
+
   .summary-card {
+
     padding: 13px 15px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MoodBloom v1.1 — Holographic Bloom
+   Layered on top of the existing responsive design.
+   ========================================================= */
+.moodbloom {
+  --holo-pink: #ff9dd8;
+  --holo-lilac: #b79bff;
+  --holo-mint: #8fe9dc;
+  --holo-blue: #a8d8ff;
+  --holo-glass: rgba(255, 255, 255, .56);
+  --holo-edge: linear-gradient(120deg, #fff, var(--holo-pink), var(--holo-lilac), var(--holo-mint), #fff);
+}
+
+/* Atmospheric light without covering interactive content */
+.moodbloom::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 38% 30% at 12% 24%, rgba(255, 159, 215, .30), transparent 80%),
+    radial-gradient(ellipse 42% 35% at 88% 48%, rgba(165, 149, 255, .25), transparent 80%),
+    radial-gradient(ellipse 38% 28% at 50% 90%, rgba(127, 236, 211, .24), transparent 80%);
+}
+
+/* Iridescent border treatment: keep each card's original shape */
+.dashboard-nav,
+.summary-card,
+.glass-card,
+.mood-preview,
+.mood-message,
+.entry,
+.stat-card,
+.selected-day,
+.calendar-day {
+  border: 1px solid rgba(255, 255, 255, .85);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.74), rgba(255,255,255,.32) 55%, rgba(246,228,255,.42)),
+    var(--holo-edge);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border-color: transparent;
+  box-shadow:
+    0 16px 38px rgba(155, 95, 183, .13),
+    0 5px 22px rgba(250, 139, 199, .11),
+    inset 0 1px 0 rgba(255,255,255,.86);
+  backdrop-filter: blur(20px) saturate(1.35);
+  -webkit-backdrop-filter: blur(20px) saturate(1.35);
+}
+
+/* Navigation: luminous selected tab */
+.dashboard-nav { position: relative; }
+.nav-brand {
+  background: linear-gradient(105deg, #c45ba7, #9d80d7 58%, #54bbaa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 10px rgba(192, 112, 191, .15));
+}
+.nav-links .nav-active {
+  background: linear-gradient(115deg, rgba(255,193,226,.85), rgba(213,197,255,.8), rgba(173,243,226,.7));
+  border-color: rgba(255,255,255,.9);
+  box-shadow: 0 0 0 1px rgba(196,143,228,.2), 0 7px 20px rgba(191,128,215,.24);
+}
+
+/* Hero and section typography */
+.dashboard-header h2,
+.page-header h2,
+.section-intro h3 {
+  background: linear-gradient(100deg, var(--accent-dark), #c66cb6 50%, #8e79d2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Floating dashboard metrics */
+.summary-card { isolation: isolate; }
+.summary-card::after {
+  content: '';
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  right: -60px;
+  top: -80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251,154,216,.30), transparent 72%);
+  pointer-events: none;
+}
+.summary-card:nth-child(2)::after {
+  background: radial-gradient(circle, rgba(171,151,255,.34), transparent 72%);
+}
+.summary-card:nth-child(3)::after {
+  background: radial-gradient(circle, rgba(127,225,206,.32), transparent 72%);
+}
+.summary-card strong,
+.stat-card strong {
+  font-weight: 850;
+  background: linear-gradient(105deg, #bd61ae, #9a80df, #55b9ab);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 8px 24px rgba(169,116,214,.13);
+}
+
+/* Mood choices: bright, mood-reactive glass */
+.mood-option {
+  isolation: isolate;
+  background: linear-gradient(155deg, rgba(255,255,255,.88), rgba(255,255,255,.42));
+  border-color: rgba(255,255,255,.92);
+  box-shadow: inset 0 1px 0 white, 0 9px 22px rgba(170,116,180,.10);
+}
+.mood-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 20%, color-mix(in srgb, var(--mood-color) 38%, transparent), transparent 72%);
+  opacity: .7;
+  pointer-events: none;
+}
+.mood-option.selected {
+  border: 2px solid var(--mood-color);
+  background: linear-gradient(150deg, rgba(255,255,255,.84), color-mix(in srgb, var(--mood-color) 32%, white));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mood-color) 20%, transparent),
+              0 0 26px color-mix(in srgb, var(--mood-color) 36%, transparent),
+              inset 0 1px 0 rgba(255,255,255,.9);
+}
+.mood-emoji { filter: drop-shadow(0 6px 8px rgba(147,100,160,.17)); }
+
+/* Keep the Three.js canvas unobstructed */
+.mood-preview {
+  background-image:
+    radial-gradient(ellipse at 24% 50%, color-mix(in srgb, var(--preview-mood) 16%, transparent), transparent 65%),
+    linear-gradient(130deg, rgba(255,255,255,.65), rgba(255,255,255,.22)),
+    var(--holo-edge);
+  background-origin: padding-box, padding-box, border-box;
+  background-clip: padding-box, padding-box, border-box;
+}
+.preview-hologram::after {
+  content: '';
+  position: absolute;
+  inset: 13% 11%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--preview-mood) 45%, white);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--preview-mood) 22%, transparent),
+              inset 0 0 26px color-mix(in srgb, var(--preview-mood) 14%, transparent);
+  pointer-events: none;
+}
+.preview-hologram .hologram-scene { position: relative; z-index: 1; }
+.mood-message { position: relative; }
+.mood-message-icon { font-size: 39px; }
+
+/* Journal memories */
+.entry {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+.entry::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--holo-pink), var(--holo-lilac), var(--holo-mint));
+  pointer-events: none;
+}
+.journal-area textarea,
+.history-toolbar input,
+.history-toolbar select,
+.edit-form select,
+.edit-form textarea {
+  background: rgba(255,255,255,.72);
+  border-color: rgba(188,149,226,.45);
+  box-shadow: inset 0 2px 12px rgba(181,132,204,.07);
+}
+.journal-area textarea:focus,
+.history-toolbar input:focus,
+.history-toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* Glowing controls */
+.save-btn:not(:disabled),
+.explore-btn:not(:disabled) {
+  background: linear-gradient(110deg, #ffe0ef, #e6d7ff 55%, #d1f7ed);
+  border-color: rgba(255,255,255,.9);
+  box-shadow: 0 8px 24px rgba(196,116,192,.22), inset 0 1px 0 white;
+  font-weight: 750;
+}
+.export-actions button,
+.entry-actions button,
+.calendar-navigation button {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 4px 12px rgba(175,119,191,.10);
+}
+
+/* Calendar: jewel-like day cells */
+.calendar-day { position: relative; }
+.calendar-day.active {
+  border-color: var(--accent);
+  background-image: linear-gradient(145deg, rgba(255,255,255,.86), var(--accent-soft));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent),
+              0 0 22px color-mix(in srgb, var(--accent) 26%, transparent);
+}
+.calendar-day .calendar-emoji { filter: drop-shadow(0 4px 7px rgba(169,118,196,.18)); }
+
+/* Insights: softly illuminated data */
+.chart-track,
+.distribution-track {
+  background: linear-gradient(180deg, rgba(255,255,255,.80), rgba(224,213,255,.38));
+  box-shadow: inset 0 2px 8px rgba(154,119,194,.11);
+}
+.chart-bar {
+  background: linear-gradient(180deg, #f5a9d7, #b69af5 55%, #8bdccc);
+  box-shadow: 0 0 18px rgba(190,137,224,.25);
+}
+.distribution-fill { box-shadow: 0 0 14px rgba(185,138,224,.25); }
+
+/* Effects only when motion is enabled */
+.motion-on .summary-card:hover,
+.motion-on .entry:hover,
+.motion-on .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(164,107,194,.19), 0 0 25px rgba(241,157,217,.13);
+}
+.motion-on .entry,
+.motion-on .stat-card {
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.motion-on .mood-option.selected { animation: holoSelect .42s ease-out; }
+@keyframes holoSelect {
+  from { filter: brightness(1.22); }
+  to { filter: brightness(1); }
+}
+
+/* Retain readable, usable UI on smaller screens */
+@media (max-width: 650px) {
+  .dashboard-nav, .glass-card { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .preview-hologram::after { inset: 15% 9%; }
+  .summary-card strong { font-size: clamp(24px, 7vw, 31px); }
+}
+
+/* Accessibility: disable all new motion when requested */
+.motion-off .entry:hover,
+.motion-off .stat-card:hover,
+.motion-off .summary-card:hover { transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .entry:hover, .stat-card:hover, .summary-card:hover { transform: none !important; }
+}
+
+/* MoodBloom v1.1 — Holographic Settings
+   Append to the END of your existing src/App.css. */
+
+.settings-page {
+  display: grid;
+  gap: 22px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.settings-page .settings-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid rgba(255, 255, 255, .88);
+  background: linear-gradient(120deg,
+    rgba(255,255,255,.8),
+    rgba(255,214,240,.43) 34%,
+    rgba(208,190,255,.48) 65%,
+    rgba(178,244,231,.4));
+  box-shadow: 0 18px 44px rgba(153,77,156,.13),
+              inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.settings-page .settings-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 88% 12%,
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent 42%);
+}
+
+.settings-section h3 {
+  margin: 12px 0 8px;
+  color: var(--accent-dark);
+  font-size: clamp(21px, 2.4vw, 27px);
+}
+
+.settings-section > p {
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.theme-choice {
+  --theme-glow: #f4a9d1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  min-height: 188px;
+  padding: 23px;
+  text-align: left;
+  color: var(--accent-dark);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 23px;
+  background: linear-gradient(140deg,
+    rgba(255,255,255,.88),
+    color-mix(in srgb, var(--theme-glow) 32%, white));
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--theme-glow) 20%, transparent),
+              inset 0 1px 0 white;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.theme-choice.theme-lavender { --theme-glow: #bfa3f4; }
+.theme-choice.theme-mint { --theme-glow: #8bdfc7; }
+
+.theme-choice .theme-emoji {
+  font-size: 30px;
+  filter: drop-shadow(0 5px 8px color-mix(in srgb, var(--theme-glow) 60%, transparent));
+}
+
+.theme-choice strong { font-size: 17px; }
+.theme-choice small { font-size: 13px; opacity: .85; }
+.theme-choice .theme-selected {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--accent-dark);
+  opacity: .65;
+}
+
+.theme-choice.active {
+  border-color: color-mix(in srgb, var(--theme-glow) 75%, white);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--theme-glow) 50%, transparent),
+              0 18px 38px color-mix(in srgb, var(--theme-glow) 45%, transparent),
+              inset 0 1px 0 white;
+}
+.theme-choice.active .theme-selected { opacity: 1; }
+.motion-on .theme-choice:hover { transform: translateY(-5px); }
+
+.setting-toggle-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 22px;
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+}
+
+.setting-toggle-copy { display: grid; gap: 7px; }
+.setting-toggle-copy strong { color: var(--accent-dark); }
+.setting-toggle-copy small { line-height: 1.5; }
+
+.setting-toggle-input {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.setting-switch {
+  flex: 0 0 auto;
+  width: 66px;
+  height: 36px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 99px;
+  background: rgba(169,150,191,.36);
+  box-shadow: inset 0 2px 7px rgba(110,65,130,.13);
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+.setting-switch-knob {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 9px rgba(100,60,115,.2);
+  transition: transform .25s ease;
+}
+
+.setting-toggle-input:checked + .setting-switch {
+  background: linear-gradient(110deg, #f5a5d1, #bc9ef3, #8edfd0);
+  box-shadow: 0 0 20px rgba(199,135,216,.4);
+}
+
+.setting-toggle-input:checked + .setting-switch .setting-switch-knob {
+  transform: translateX(30px);
+}
+
+.setting-toggle-input:focus-visible + .setting-switch,
+.theme-choice:focus-visible,
+.settings-actions button:focus-visible,
+.danger-button:focus-visible {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 4px;
+}
+
+.settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.settings-actions button,
+.danger-button {
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 99px;
+  color: var(--accent-dark);
+  background: linear-gradient(120deg,
+    rgba(255,255,255,.85),
+    rgba(246,198,230,.75),
+    rgba(208,194,255,.7));
+  box-shadow: 0 9px 22px rgba(165,91,162,.15);
+  font-weight: 650;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.motion-on .settings-actions button:hover:not(:disabled),
+.motion-on .danger-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(165,91,162,.24);
+}
+
+.settings-actions button:disabled,
+.danger-button:disabled { opacity: .5; cursor: not-allowed; }
+
+.settings-note {
+  margin: 17px 0 0;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.settings-feedback {
+  padding: 14px 17px;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 16px;
+  background: rgba(255,255,255,.7);
+  color: var(--accent-dark);
+  font-weight: 650;
+}
+
+.data-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 21px 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 20px;
+  background: rgba(255,255,255,.53);
+}
+
+.data-summary strong {
+  font-size: 32px;
+  color: var(--accent-dark);
+}
+
+.danger-button {
+  color: #9e3f69;
+  background: linear-gradient(110deg, #fff6fa, #ffd8e6);
+  border-color: #f1bad0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 750px) {
+  .theme-grid { grid-template-columns: 1fr; }
+  .theme-choice { min-height: 145px; }
+}
+
+@media (max-width: 480px) {
+  .settings-page { gap: 15px; }
+  .settings-page .settings-section { padding: 20px; }
+  .setting-toggle-row { padding: 16px; }
+  .settings-actions { flex-direction: column; }
+  .settings-actions button { width: 100%; }
+}
+
+.motion-off .theme-choice,
+.motion-off .setting-switch,
+.motion-off .setting-switch-knob,
+.motion-off .settings-actions button,
+.motion-off .danger-button {
+  transition: none !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-choice, .setting-switch, .setting-switch-knob,
+  .settings-actions button, .danger-button {
+    transition: none !important;
+    transform: none !important;
   }
 }
+
+/* MoodBloom v1.1 — Calendar holographic polish.
+   Append this to the END of src/App.css. */
+.holo-calendar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(130deg, rgba(255,255,255,.78), rgba(248,227,251,.45), rgba(216,247,240,.38));
+  border: 1px solid rgba(255,255,255,.85);
+  box-shadow: 0 18px 42px rgba(157,103,182,.13), inset 0 1px rgba(255,255,255,.9);
+}
+.holo-calendar .calendar-navigation button {
+  background: linear-gradient(130deg, rgba(255,255,255,.94), rgba(226,205,255,.8));
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 6px 18px rgba(151,112,195,.15);
+}
+.holo-calendar .calendar-day {
+  position: relative;
+  isolation: isolate;
+  background: rgba(255,255,255,.47);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: inset 0 1px rgba(255,255,255,.65);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.holo-calendar .calendar-day.has-mood {
+  background: linear-gradient(145deg, rgba(255,255,255,.83), color-mix(in srgb, var(--day-mood) 35%, white));
+  border-color: color-mix(in srgb, var(--day-mood) 48%, white);
+  box-shadow: 0 4px 13px color-mix(in srgb, var(--day-mood) 20%, transparent), inset 0 1px white;
+}
+.holo-calendar .calendar-day.active {
+  border: 2px solid var(--day-mood, var(--accent));
+  background: linear-gradient(135deg, rgba(255,255,255,.9), color-mix(in srgb, var(--day-mood, var(--accent)) 27%, white));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--day-mood, var(--accent)) 24%, transparent), 0 9px 24px color-mix(in srgb, var(--day-mood, var(--accent)) 28%, transparent);
+}
+.holo-calendar .calendar-day.is-today .calendar-date-number {
+  display: grid;
+  place-items: center;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 2px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+.motion-on .holo-calendar .calendar-day:hover { transform: translateY(-3px); }
+.holo-calendar .selected-day {
+  background: linear-gradient(120deg, rgba(255,255,255,.82), rgba(230,213,255,.48));
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 9px 24px rgba(150,107,180,.12);
+}
+.holo-calendar .calendar-entry { overflow-wrap: anywhere; }
+.motion-off .holo-calendar .calendar-day { transition: none !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .holo-calendar .calendar-day { transition: none !important; transform: none !important; }
+}
+
+/* MoodBloom v1.1: Weekly Insights — append to the bottom of App.css */
+.holographic-insights {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid rgba(255, 255, 255, .82);
+  background: linear-gradient(125deg, rgba(255,255,255,.84), rgba(255,219,241,.55) 35%, rgba(221,209,255,.54) 67%, rgba(208,249,235,.55));
+  box-shadow: 0 20px 48px rgba(143, 95, 155, .13), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.holographic-insights .section-heading { margin-bottom: 24px; }
+.holographic-insights .section-heading h3 { margin: 9px 0 6px; }
+.holographic-insights .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.holographic-insights .insight-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  min-height: 155px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 23px;
+  background: linear-gradient(145deg, rgba(255,255,255,.83), var(--insight-tint));
+  box-shadow: 0 10px 27px rgba(124, 86, 151, .11), inset 0 1px 0 white;
+}
+.holographic-insights .insight-stat-pink { --insight-tint: rgba(255,184,222,.48); }
+.holographic-insights .insight-stat-lavender { --insight-tint: rgba(202,180,255,.48); }
+.holographic-insights .insight-stat-mint { --insight-tint: rgba(165,239,221,.48); }
+.holographic-insights .insight-stat > span { font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+.holographic-insights .insight-stat > strong { font-size: clamp(25px, 3vw, 36px); line-height: 1.2; overflow-wrap: anywhere; }
+.holographic-insights .insight-stat > strong.insight-mood-value { font-size: clamp(19px, 2.1vw, 26px); }
+.holographic-insights .insight-stat > small { font-size: 12px; opacity: .8; line-height: 1.4; }
+.holographic-insights .insight-panel {
+  margin-top: 20px;
+  padding: clamp(18px, 2.6vw, 28px);
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 24px;
+  background: rgba(255,255,255,.49);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 10px 28px rgba(144,101,157,.08);
+}
+.holographic-insights .insight-panel-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 20px;
+}
+.holographic-insights .insight-panel-heading h4 { margin: 0; }
+.holographic-insights .insight-panel-hint { font-size: 12px; font-weight: 650; opacity: .7; }
+.holographic-insights .insight-weekly-chart { min-height: 210px; margin: 0; }
+.holographic-insights .insight-weekly-chart .chart-track {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 14px 14px 8px 8px;
+  background: rgba(255,255,255,.5);
+}
+.holographic-insights .insight-weekly-chart .insight-chart-bar {
+  border-radius: 12px 12px 5px 5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65), 0 0 16px rgba(206,155,235,.25);
+  background: linear-gradient(180deg, #f7a6d3, #d5a4f5);
+}
+.holographic-insights .insight-weekly-chart .insight-bar-1 { background: linear-gradient(180deg, #c8a9ff, #9fc3ff); }
+.holographic-insights .insight-weekly-chart .insight-bar-2 { background: linear-gradient(180deg, #9fe7d8, #b4c9ff); }
+.holographic-insights .insight-distribution-list { display: grid; gap: 13px; }
+.holographic-insights .insight-distribution-row { display: grid; grid-template-columns: minmax(95px, 1.2fr) minmax(90px, 3fr) 32px; align-items: center; gap: 14px; }
+.holographic-insights .insight-distribution-name { font-size: 14px; font-weight: 650; }
+.holographic-insights .insight-distribution-row .distribution-track {
+  overflow: hidden;
+  height: 15px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 99px;
+  background: rgba(255,255,255,.64);
+}
+.holographic-insights .insight-distribution-fill { height: 100%; border-radius: inherit; box-shadow: inset 0 1px 0 rgba(255,255,255,.5); }
+.holographic-insights .insight-distribution-count { text-align: right; font-variant-numeric: tabular-nums; }
+.holographic-insights .insight-empty { margin: 14px 0 0; font-size: 13px; opacity: .8; }
+@media (max-width: 740px) {
+  .holographic-insights .stats-grid { grid-template-columns: 1fr; }
+  .holographic-insights .insight-stat { min-height: 120px; }
+}
+@media (max-width: 460px) {
+  .holographic-insights .insight-distribution-row { grid-template-columns: 92px minmax(55px,1fr) 25px; gap: 8px; }
+  .holographic-insights .insight-distribution-name { font-size: 12px; }
+  .holographic-insights .insight-panel { padding: 16px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .holographic-insights *, .holographic-insights *::before, .holographic-insights *::after { animation: none !important; transition: none !important; }
+}
+.motion-off .holographic-insights *, .motion-off .holographic-insights *::before, .motion-off .holographic-insights *::after { animation: none !important; transition: none !important; }

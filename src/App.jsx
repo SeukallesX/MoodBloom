@@ -477,6 +477,12 @@ export default function App() {
         aria-hidden="true"
       />
 
+      <div className="holo-atmosphere" aria-hidden="true">
+        <span className="holo-orb holo-orb-one" />
+        <span className="holo-orb holo-orb-two" />
+        <span className="holo-orb holo-orb-three" />
+      </div>
+
       {!exploring ? (
         <section
           className={`welcome ${
@@ -547,7 +553,8 @@ export default function App() {
             aria-label="Dashboard navigation"
           >
             <div className="nav-brand">
-              ✿ MoodBloom
+              <span className="holo-brand-mark" aria-hidden="true">✿</span> MoodBloom
+              <span className="holo-brand-spark" aria-hidden="true"> ✧</span>
             </div>
 
             <div className="nav-links">
@@ -605,13 +612,15 @@ export default function App() {
               </header>
 
               <div className="summary-grid">
-                <div className="summary-card animated-card">
+                <div className="summary-card animated-card holo-metric">
+                  <span className="metric-spark" aria-hidden="true">✧</span>
                   <span>🌸 Moments Saved</span>
                   <strong>{entries.length}</strong>
                   <small>Pieces of your journey</small>
                 </div>
 
-                <div className="summary-card animated-card">
+                <div className="summary-card animated-card holo-metric">
+                  <span className="metric-spark" aria-hidden="true">✦</span>
                   <span>🔥 Your Bloom Streak</span>
 
                   <strong>
@@ -622,7 +631,8 @@ export default function App() {
                   <small>One day at a time</small>
                 </div>
 
-                <div className="summary-card animated-card">
+                <div className="summary-card animated-card holo-metric">
+                  <span className="metric-spark" aria-hidden="true">✧</span>
                   <span>💗 Latest Feeling</span>
 
                   <strong>
@@ -635,7 +645,7 @@ export default function App() {
                 </div>
               </div>
 
-              <section className="glass-card checkin-card animated-card">
+              <section className="glass-card checkin-card animated-card holo-panel">
                 <div className="section-intro">
                   <span className="section-kicker">
                     ✦ TODAY'S LITTLE MOMENT
@@ -694,6 +704,7 @@ export default function App() {
                   }}
                 >
                   <div className="mood-preview-heading">
+                  <span className="holo-panel-spark" aria-hidden="true">✧ ✦ ✧</span>
                     <span className="section-kicker">
                       ✦ YOUR EMOTIONAL UNIVERSE
                     </span>
@@ -804,7 +815,7 @@ export default function App() {
                 </div>
               </section>
 
-              <section className="glass-card history-card animated-card">
+              <section className="glass-card history-card animated-card holo-panel">
                 <div className="section-intro">
                   <span className="section-kicker">
                     ✦ YOUR PERSONAL STORY
@@ -900,8 +911,9 @@ export default function App() {
 
                       return (
                         <article
-                          className="entry"
+                          className="entry holo-memory"
                           key={entry.id}
+                          style={{ '--entry-mood': mood?.color || '#f4a5cb' }}
                         >
                           {editingId === entry.id ? (
                             <div className="edit-form">
@@ -1024,7 +1036,7 @@ export default function App() {
                 </p>
               </header>
 
-              <div className="animated-card">
+              <div className="animated-card holo-feature-shell">
                 <MoodCalendar entries={entries} />
               </div>
             </div>
@@ -1048,7 +1060,7 @@ export default function App() {
                 </p>
               </header>
 
-              <div className="animated-card">
+              <div className="animated-card holo-feature-shell">
                 <MoodInsights entries={entries} />
               </div>
             </div>
@@ -1072,6 +1084,7 @@ export default function App() {
                 </p>
               </header>
 
+              <div className="holo-feature-shell">
               <MoodSettings
                 theme={theme}
                 onThemeChange={setTheme}
@@ -1085,6 +1098,7 @@ export default function App() {
                 onImportEntries={importEntries}
                 onClearEntries={clearEntries}
               />
+              </div>
             </div>
           )}
         </section>
